@@ -1,0 +1,28 @@
+<div class="container">
+    <header>
+        <p>Guess the number!</p>
+    </header>
+    <h1>
+    Guess the computer generated number between 1 and 10.
+</h1>
+    <form>
+        <input [(ngModel)]="gussedNumber.value" placeholder="Your guess" />
+        <button type="submit" class="verify-button" (click)="verify()">Verify</button>
+        <button type="button" class="reset-button" (click)="reset()">Reset</button>
+    </form>
+    <div class="hint" [hidden]="!low">
+        <p class="hint-text">{{message}}</p>
+    </div>
+    <div class="hint" [hidden]="!high">
+        <p class="hint-text">{{message}}</p>
+    </div>
+    <div class="hint-success" [hidden]="!successful">
+        <p class="hint-text">{{message}}</p>
+    </div>
+    <div class="hint" [hidden]="!error">
+        <p class="hint-text">{{message}}</p>
+    </div>
+    <div>
+        <p>Number of guesses: {{count}}</p>
+    </div>
+</div>
